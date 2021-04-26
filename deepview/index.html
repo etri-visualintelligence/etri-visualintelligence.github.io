@@ -18,11 +18,68 @@ title: {{ site.name }}
 <iframe width="640" height="355" src="//www.youtube.com/embed/zKdgkRHYwwM" frameborder="0" allowfullscreen></iframe>
  </div>
   
-<h2> 연구내용 </h2>
-(총괄/1세부/4세부) 실시간 대규모 영상 데이터 이해·예측을 위한 고성능 비주얼 디스커버리 플랫폼 개발, 주관: ETRI <br>  
+<h2> 연구 목표 </h2>
+(총괄) 대규모 실시간 영상 이해 기반의 시각지능 플랫폼 개발, ETRI) <br> 
+(1세부) 실시간 대규모 영상 데이터 이해·예측을 위한 고성능 비주얼 디스커버리 플랫폼 개발, 주관: ETRI <br>  
 (2세부) 대규모 실시간 비디오 분석에 의한 전역적 다중 관심객체 추적 및 상황예측 기술 개발, 주관: GIST <br> 
+(4세부) 예지형 시각 지능 원천 기술 개발, 주관: POSTECH <br> 
 
-* 3단계(2021~2023) 연구부터는 총괄 및 4세부(원천기술 개발)이 1세부와 통합
+* 3단계 (2021~2023) 연구에서는 총괄/1세부/4세부 통합되어 연구 진행
+
+<h2> 주요 연구 내용 </h2>
+<h3> 1. 사물 및 행동이해를 위한 백본 네트워크 고도화 기술 </h3>
+- GPU 메모리 및 전력 효율적인 VoVNet (Varierty of View Network) 백본 네트워크 기술 개발 <br> 
+- One-shot aggregation을 통해 특징맵 중첩을 최소화하고 채널을 증가시켜 고속의 높은 정확도 달성<br> 
+- 객체 분할 기술에 적용하여 센터 중심의 고속 객체 검출을 구현하여 세계 최고 성능 달성<br> 
+적대적 공격에 강인한 백본 네트워크 기술 및 위치 예측 불확실성을 통한 강인한 객체 탐지 기술 개발<br> 
+- 주요 성과<br> 
+<ul>
+	<li> Youngwan Lee et al., An Energy and GPU-Computation Efficient Backbone Network for Real-Time Object Detection, CVPR 2019 workshop [논문]</li>
+	<li> Youngwan Lee and Jongyoul Park, CenterMask: Real-Time Anchor-Free Instance Segmentation, CVPR 2020 [논문]</li>
+	<li>Youngwan Lee et al., Localization Uncertainty Estimation for Anchor-Free Object Detection, ArXiv 2020 [논문]</li>
+	<li>Joong-won Hwang et al., Adversarial Training with Stochastic Weight Average, ArXiv 2020 [논문]</li>
+</ul>
+
+
+<h3>2. 사람 상태 및 속성 이해 뉴럴넷 기술 </h3>
+
+- 실시간 사용자 상호작용이 가능한 고화실 얼굴 편집 및 복원 기술의 개발 (SC-FEGAN)<br> 
+- 자기 지도 학습 기반의 회전에 강인한 사람 포즈 추정 기술<br> 
+- 세부적인 사람 상태 이해를 위한 포즈 정보가 결합된 사람-사물 상호작용 관계 이해 기술<br> 
+- 주요 성과<br> 
+<ul>
+	<li>Youngjoo Jo and Jongyoul Park, SC-FEGAN: Face Editing Generative Adversarial Network with User’s Sketch and Color, ICCV 2019 [논문]</li>
+	<li>Kimin Yun et al., Robust Human Pose Estimation for Rotation via Self-Supervised Learning, IEEE Access, SCIE, 2020 [논문]</li>
+	<li>Jaewon Jung et al., Improving visual relationship detection using linguistic and spatial cues, ETRI Journal, SCIE, 2020 [논문]</li>
+	<li>Geonu Lee et al., Improved Human-Object Interaction Detection through On-the-Fly Stacked Generalization, IEEE Access, SCIE, 2021 [논문]</li>
+</ul>
+
+
+<h3>3. 비디오 행동 이해 네트워크 기술 </h3>
+- 스코어맵 추론 기술을 통한 비분할 영상에서의 정교한 행동 구간 탐지 기술<br> 
+- 정보 차별화 유닛을 활용한 온라인 행동 구간 탐지 기술<br> 
+- 다중 작업 학습을 활용한 실세계 쓰레기 투기 행위 탐지 기술<br> 
+- 주요 성과<br>
+<ul>
+	<li>Hyunjun Eun et al., SRG: Snippet Relatedness-based Temporal Action Proposal Generator, IEEE Transactions on Circuits and Systems for Video Technology, SCIE, 2019 [논문]</li>
+	<li>Hyunjun Eun et al., Learning to Discriminate Information for Online Action Detection, CVPR, 2020 [논문]</li>
+	<li>Hyunjun Eun et al., Temporal filtering networks for online action detection, Pattern Recognition, SCIE, 2021 [논문]</li>
+	<li>Kimin Yun et al., Vision‐based garbage dumping action detection for real‐world surveillance platform, ETRI Journal (Best Paper Award), SCIE, 2019 [논문]</li>
+	<li>Kangmin Bae and Kimin Yun et al., Anti-Litter Surveillance based on Person Understanding via Multi-Task Learning, BMVC, 2020 [논문]</li>
+</ul>
+
+
+<h3>4. 시각 지식 기반의 심층 분석 및 검색 기술</h3>
+- 시공간 연산 기반 대규모 시각 지식의 경로 분석 및 검색 기술 개발<br> 
+- 분산 인메모리 기반 색인 구조에서의 유사도 기반 검색 구조와 색인 구조 개선<br> 
+- 고속의 대용량 CCTV 메타데이터에 대한 시공간, 이미지, 텍스트 속성을 고려한 색인 구조 연구<br> 
+- 주요 성과<br> 
+<ul>
+	<li>Yongjin Kwon et al., Hierarchically Linked Infinite Hidden Markov Model based Trajectory Analysis and Semantic Region Retrieval in a Trajectory Dataset, Expert Systems with Applications, SCIE, 2017 [논문]</li>
+<li>Kyoungsoo Bok et al., An efficient continuous k-nearest neighbor query processing scheme for multimedia data sharing and transmission in location based services, Multimedia Tools and Applications, SCIE, 2019 [논문]</li>
+<li>Kyoungsoo Bok et al., In-Memory Caching for Enhancing Subgraph Accessibility, Applied Sciences, SCIE, 2020 [논문]</li>
+</ul>
+
 
 <h3> 연구실적(홍보) </h3>
  <div class="video-container"> 
@@ -43,24 +100,29 @@ title: {{ site.name }}
 <div class="video-container"> 
 <iframe width="640" height="355" src="//www.youtube.com/embed/VmtTNkZ3BqM" frameborder="0" allowfullscreen></iframe>
  </div>
+
+
   
-  
-<h3> 연구실적(논문) - 탑티어 학술대회 </h3>
-1. Dae Ung Jo, et.al, 'Associative Variational Auto-encoder with Distributed Latent Spaces and Associators”, AAAI2020, January 2020. <br> 
-2. Youngwan Lee, et.al, "CenterMask: Real-Time Anchor-Free Instance Segmentation," CVPR2020, June 2020.<br> 
-3. Gun-Hee Lee and Seong-Whan Lee, "Uncertainty-aware Mesh Decoder for High Fidelity 3D Face Reconstruction," CVPR2020, June 2020.<br> 
-4. Hyunjun Eun, et.al, "Learning to Discriminate Information for Online Action Detection," CVPR2020, June 2020.<br> 
-5. Jaeyeon Kang, et.al, "Deep Space-time Video Upsampling Networks”, ECCV2020, August 2020.<br> 
-6. Byeongho Heo, et.al, "Knowledge Distillation with Adversarial Samples Supporting Decision Boundary," AAAI2019, January 2019.<br> 
-7. Byeongho Heo, et.al, “Knowledge Transfer via Distillation of Activation Boundaries Formed by Hidden Neurons”, AAAI2019, January  2019.<br> 
-8. Seonguk Seo, et.al, "Learning for Single-shot Confidence Calibration in Deep Neural Networks through Stochastic Inferences”, CVPR2019, June  2019.<br> 
-9. Seonghyeon Nam, et.al,  “End-to-end Time-lapse Video Synthesis from a Single Outdoor Image”, CVPR2019, June  2019.<br> 
-10. Jiwoong Park, et.al, "Symmetric Graph Convolutional Autoencoder for Unsupervised Graph Representation Learning”, ICCV2019, October 2019.<br> 
-11. Youngjoo Jo and Jongyoul Park, "SC-FEGAN: Face Editing Generative Adversarial Network with Users's Sketch and Color," ICCV2019, October 2019.<br> 
-12. Seoungwug Oh, et.al., "Fast Video Object Segmentation by Reference-Guided Mask Propagation”, CVPR2018, June 2018.<br> 
-13. Seung-Wook Kim,et.al, "Parallel Feature Pyramid Network for Object Detection," ECCV2018, September 2018.<br> 
-14. Yonghyun Kim, et.al, "SAN: Learning Relationship between Convolutional Features for Multi-Scale Object Detection," ECCV2018, September 2018.<br> 
-15. Ilchae Jung, et.al, "Real-Time MDNet," ECCV2018, September 2018.<br> 
+<h3> 주요 연구실적 (논문) </h3>
+<h4> 탑티어 학술대회 </h4> 
+<ol>
+	<li> Dae Ung Jo et.al, 'Associative Variational Auto-encoder with Distributed Latent Spaces and Associators”, AAAI 2020, </li>
+	<li> Youngwan Lee, et.al, "CenterMask: Real-Time Anchor-Free Instance Segmentation," CVPR2020, June 2020.</li>
+	<li> Gun-Hee Lee and Seong-Whan Lee, "Uncertainty-aware Mesh Decoder for High Fidelity 3D Face Reconstruction," CVPR2020, June 2020. </li>
+	<li> Hyunjun Eun et.al, "Learning to Discriminate Information for Online Action Detection," CVPR2020, June 2020.</li>
+	<li> Jaeyeon Kang et.al, "Deep Space-time Video Upsampling Networks”, ECCV2020, August 2020.</li>
+	<li> Byeongho Heo et.al, "Knowledge Distillation with Adversarial Samples Supporting Decision Boundary," AAAI2019, January 2019.</li>
+	<li> Byeongho Heo et.al, “Knowledge Transfer via Distillation of Activation Boundaries Formed by Hidden Neurons”, AAAI2019, January  2019.</li> 
+	<li> Seonguk Seo et.al, "Learning for Single-shot Confidence Calibration in Deep Neural Networks through Stochastic Inferences”, CVPR2019, June  2019.</li>
+	<li> Seonghyeon Nam et.al,  “End-to-end Time-lapse Video Synthesis from a Single Outdoor Image”, CVPR2019, June  2019.</li>
+	<li> Jiwoong Park et.al, "Symmetric Graph Convolutional Autoencoder for Unsupervised Graph Representation Learning”, ICCV2019, October 2019.</li>
+	<li> Youngjoo Jo and Jongyoul Park, "SC-FEGAN: Face Editing Generative Adversarial Network with Users's Sketch and Color," ICCV2019, October 2019.</li> 
+	<li> Seoungwug Oh et.al., "Fast Video Object Segmentation by Reference-Guided Mask Propagation”, CVPR2018, June 2018.</li>
+	<li> Seung-Wook Kim et.al, "Parallel Feature Pyramid Network for Object Detection," ECCV2018, September 2018.</li>
+	<li> Yonghyun Kim, et.al, "SAN: Learning Relationship between Convolutional Features for Multi-Scale Object Detection," ECCV2018, September 2018. </li>
+	<li> Ilchae Jung, et.al, "Real-Time MDNet," ECCV2018, September 2018. </li>
+</ol>
+
 
 <h3> 연구자 개인링크 </h3>
   윤기민 선임 연구원 <a href="https://sites.google.com/view/kiminyun/profile">https://sites.google.com/view/kiminyun/profile </a>  <br>
@@ -68,6 +130,4 @@ title: {{ site.name }}
   조영주 연구원 <a href="https://github.com/run-youngjoo/SC-FEGAN">https://github.com/run-youngjoo/SC-FEGAN</a>  <br>  
   
 <h4> Acknowledgement </h4>
-This work was supported by Institute for Information &
-Communications Technology Promotion (IITP) grant funded
-by the Korea government (MSIT) [No.B010115-0266, Development of H(a)iIngphut imPagerfor(mb) GaronuncdetrutVh isual BigData Discovery Platform for Large-Scale Realtime Data Analysis]. <br>
+This work was supported by Institute of Information & Communications Technology Planning & Evaluation(IITP) grant funded by the Korea government(MSIT) (No.2014-3-00123, Development of High Performance Visual BigData Discovery Platform for Large-Scale Realtime Data Analysis]. <br>
