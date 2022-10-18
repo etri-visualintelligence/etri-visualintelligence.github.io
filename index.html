@@ -99,8 +99,7 @@ title: <a href="https://etri-visualintelligence.github.io/"> {{ site.name }} </a
 	.section [id="slide08"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-700%);}
 	.section [id="slide09"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-800%);}
 	.section [id="slide10"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-900%);}
-	.section [id="slide11"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-1000%);}
-	.section [id="slide12"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-1100%);}
+
 	
 	/*  INPUT이 체크되면 변화값이 좌우 슬라이드 버튼을 담고 있는 div 까지 전달되는 스타일 */
 	.section [id="slide01"]:checked ~ .slidewrap .control01 {display:block;}
@@ -113,8 +112,6 @@ title: <a href="https://etri-visualintelligence.github.io/"> {{ site.name }} </a
 	.section [id="slide08"]:checked ~ .slidewrap .control08 {display:block;}
 	.section [id="slide09"]:checked ~ .slidewrap .control09 {display:block;}
 	.section [id="slide10"]:checked ~ .slidewrap .control10 {display:block;}
-	.section [id="slide11"]:checked ~ .slidewrap .control11 {display:block;}
-	.section [id="slide12"]:checked ~ .slidewrap .control12 {display:block;}
 
 	</style>
 
@@ -129,8 +126,6 @@ title: <a href="https://etri-visualintelligence.github.io/"> {{ site.name }} </a
 	<input type="radio" name="slide" id="slide08">
 	<input type="radio" name="slide" id="slide09">
 	<input type="radio" name="slide" id="slide10">
-	<input type="radio" name="slide" id="slide11">
-	<input type="radio" name="slide" id="slide12">
 	
 	<div class="slidewrap">
 		<ul class="slidelist">
@@ -184,16 +179,7 @@ title: <a href="https://etri-visualintelligence.github.io/"> {{ site.name }} </a
 					<img src="slide/slide10.png">
 				</a>
 			</li>
-			<li>
-				<a>
-					<img src="slide/slide11.png">
-				</a>
-			</li>
-			<li>
-				<a>
-					<img src="slide/slide12.png">
-				</a>
-			</li>
+
 		</ul>
 
 		<div class="slide-control">
@@ -235,16 +221,9 @@ title: <a href="https://etri-visualintelligence.github.io/"> {{ site.name }} </a
 			</div>
 			<div class="control10">
 				<label for="slide09" class="left"></label>
-				<label for="slide11" class="right"></label>
-			</div>
-			<div class="control11">
-				<label for="slide10" class="left"></label>
-				<label for="slide12" class="right"></label>
-			</div>
-			<div class="control12">
-				<label for="slide11" class="left"></label>
 				<label for="slide01" class="right"></label>
 			</div>
+
 
 			
 		</div>
