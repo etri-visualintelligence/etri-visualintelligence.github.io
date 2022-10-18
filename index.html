@@ -8,60 +8,70 @@ title: <a href="https://etri-visualintelligence.github.io/"> {{ site.name }} </a
 * {margin:0;padding:0;box-sizing:border-box;}
 ul, li {list-style:none;}
 
-/* 슬라이드 Style */
-.slidebox {max-width:1000px;margin:0 auto;}
-.slidebox .slidelist {white-space:nowrap;font-size:0;overflow:hidden;}
-.slidebox .slidelist .slideitem {position:relative;display:inline-block;vertical-align:middle;width:100%;transition:all 1s;}
+
+.slidebox {max-width:700px;margin:0 auto;position:relative;}
+.slidebox .slidelist {position:relative;white-space:nowrap;font-size:0;overflow:hidden;}
+.slidebox .slidelist .slideitem {position:relative;display:inline-block;vertical-align:middle;background-color:#fff;width:100%;transition:all 1s;}
 .slidebox .slidelist .slideitem > a {display:block;width:auto;position:relative;}
 .slidebox .slidelist .slideitem > a img {max-width:100%;}
-.slidebox .slidelist .slideitem > a label {position:absolute;top:50%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
-.slidebox .slidelist .slideitem > a label.prev {left:20px;background:#333 url('img/left-arrow.png') center center / 50% no-repeat;}
-.slidebox .slidelist .slideitem > a label.next {right:20px;background:#333 url('img/right-arrow.png') center center / 50% no-repeat;}
 
+.slidebox .slide-control [class*="control"] label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
+.slidebox .slide-control [class*="control"] label.prev {left:-50px;background:#333 url('./img/left-arrow.png') center center / 50% no-repeat;}
+.slidebox .slide-control [class*="control"] label.next {right:-50px;background:#333 url('./img/right-arrow.png') center center / 50% no-repeat;}
 
 [name="slide"] {display:none;}
-#slide01:checked ~ .slidelist .slideitem {transform:translateX(0);animation:slide01 10s infinite;}
-#slide02:checked ~ .slidelist .slideitem {transform:translateX(-100%);animation:slide02 10s infinite;}
+#slide01:checked ~ .slidelist .slideitem {left:0;}
+#slide02:checked ~ .slidelist .slideitem {left:-100%;}
+#slide03:checked ~ .slidelist .slideitem {left:-200%;}
+#slide04:checked ~ .slidelist .slideitem {left:-300%;}
 
-@keyframes slide01 {
-	0% {left:0%;}
-	49% {left:0%;}
-	50% {left:-100%}
-	99% {left:-100%;}
-	100% {left:0;}
-}
+.slide-control [class*="control"] {display:none;}
+#slide01:checked ~ .slide-control .control01 {display:block;}
+#slide02:checked ~ .slide-control .control02 {display:block;}
+#slide03:checked ~ .slide-control .control03 {display:block;}
+#slide04:checked ~ .slide-control .control04 {display:block;}
 
-@keyframes slide02 {
-	0% {left:0%;}
-	49% {left:0%;}
-	50% {left:100;}
-	99% {left:100;}
-	100% {left:0%;}
-}
 </style>
 
 <div class="slidebox">
 	<input type="radio" name="slide" id="slide01" checked>
 	<input type="radio" name="slide" id="slide02">
+	<input type="radio" name="slide" id="slide03">
+	<input type="radio" name="slide" id="slide04">
 	<ul class="slidelist">
 		<li class="slideitem">
-			<a>
-				<label for="slide02" class="prev"></label>
-				<img src="img/slide01.jpg">
-				<label for="slide02" class="next"></label>
-			</a>
+			<a><img src="./img/slide01.jpg"></a>
 		</li>
 		<li class="slideitem">
-			<a>
-				<label for="slide01" class="prev"></label>
-				<img src="img/slide02.jpg">
-				<label for="slide01" class="next"></label>
-			</a>
+			<a><img src="./img/slide02.jpg"></a>
 		</li>
+		<li class="slideitem">
+			<a><img src="./img/slide03.jpg"></a>
+		</li>
+		<li class="slideitem">
+			<a><img src="./img/slide04.jpg"></a>
+		</li>
+		
 	</ul>
+	<div class="slide-control">
+		<div class="control01">
+			<label for="slide04" class="prev"></label>
+			<label for="slide02" class="next"></label>
+		</div>
+		<div class="control02">
+			<label for="slide01" class="prev"></label>
+			<label for="slide03" class="next"></label>
+		</div>
+		<div class="control03">
+			<label for="slide02" class="prev"></label>
+			<label for="slide04" class="next"></label>
+		</div>
+		<div class="control04">
+			<label for="slide03" class="prev"></label>
+			<label for="slide01" class="next"></label>
+		</div>
+	</div>
 </div>
-
-
 
 <div id="home">
   <h2>실시간 대규모 영상 데이터 이해/예측을 위한 고성능 비주얼 디스커버리 플랫폼 </h2>
