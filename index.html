@@ -3,72 +3,185 @@ layout: default
 title: <a href="https://etri-visualintelligence.github.io/"> {{ site.name }} </a>
 ---
 
-<style>
-/* 리셋 CSS */
-* {margin:0;padding:0;box-sizing:border-box;}
-ul, li {list-style:none;}
+	<style>
+	/* 브라우저 마진과 패딩 리셋 */
+	* {margin:0;padding:0;}
 
+	/* INPUT 가리기 */
+	.section [id*="slide"] {display:none;}
+	
+	/* 슬라이드 영역 - max-width 크기를 조절해주면 됩니다*/
+	.section .slidewrap {max-width:1200px;margin:0 auto;overflow:hidden;position:relative;}
+	.section .slidelist {white-space:nowrap;font-size:0;}
+	.section .slidelist > li {display:inline-block;vertical-align:middle;width:100%;transition:all .5s;}
+	.section .slidelist > li > a {display:block;position:relative;}
 
-.slidebox {max-width:700px;margin:0 auto;position:relative;}
-.slidebox .slidelist {position:relative;white-space:nowrap;font-size:0;overflow:hidden;}
-.slidebox .slidelist .slideitem {position:relative;display:inline-block;vertical-align:middle;background-color:#fff;width:100%;transition:all 1s;}
-.slidebox .slidelist .slideitem > a {display:block;width:auto;position:relative;}
-.slidebox .slidelist .slideitem > a img {max-width:100%;}
+	/* 좌우로 넘기는 LABEL버튼에 대한 스타일 */
+	.section .slide-control {position:absolute;top:0;left:0;z-index:10;width:100%;height:100%;}
+	.section .slide-control label {position:absolute;z-index:1;top:50%;transform:translateY(-50%);padding:50px;cursor:pointer;}
+	.section .slide-control .left {left:30px;background:url('img/left.png') center center / 100% no-repeat;}
+	.section .slide-control .right {right:30px;background:url('img/right.png') center center / 100% no-repeat;}
+	.section .slide-control [class*="control"] {display:none;}
 
-.slidebox .slide-control [class*="control"] label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
-.slidebox .slide-control [class*="control"] label.prev {left:-50px;background:#333 url('./img/left-arrow.png') center center / 50% no-repeat;}
-.slidebox .slide-control [class*="control"] label.next {right:-50px;background:#333 url('./img/right-arrow.png') center center / 50% no-repeat;}
+	/* INPUT이 체크되면 변화값이 li까지 전달되는 스타일 */
+	.section [id="slide01"]:checked ~ .slidewrap .slidelist > li {transform:translateX(0%);}
+	.section [id="slide02"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-100%);}
+	.section [id="slide03"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-200%);}
+	.section [id="slide04"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-300%);}
+	.section [id="slide05"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-400%);}
+	.section [id="slide06"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-500%);}
+	.section [id="slide07"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-600%);}
+	.section [id="slide08"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-700%);}
+	.section [id="slide09"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-800%);}
+	.section [id="slide10"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-900%);}
+	.section [id="slide11"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-1000%);}
+	.section [id="slide12"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-1100%);}
+	
+	/*  INPUT이 체크되면 변화값이 좌우 슬라이드 버튼을 담고 있는 div 까지 전달되는 스타일 */
+	.section [id="slide01"]:checked ~ .slidewrap .control01 {display:block;}
+	.section [id="slide02"]:checked ~ .slidewrap .control02 {display:block;}
+	.section [id="slide03"]:checked ~ .slidewrap .control03 {display:block;}
+	.section [id="slide04"]:checked ~ .slidewrap .control04 {display:block;}
+	.section [id="slide05"]:checked ~ .slidewrap .control05 {display:block;}
+	.section [id="slide06"]:checked ~ .slidewrap .control06 {display:block;}
+	.section [id="slide07"]:checked ~ .slidewrap .control07 {display:block;}
+	.section [id="slide08"]:checked ~ .slidewrap .control08 {display:block;}
+	.section [id="slide09"]:checked ~ .slidewrap .control09 {display:block;}
+	.section [id="slide10"]:checked ~ .slidewrap .control10 {display:block;}
+	.section [id="slide11"]:checked ~ .slidewrap .control11 {display:block;}
+	.section [id="slide12"]:checked ~ .slidewrap .control12 {display:block;}
 
-[name="slide"] {display:none;}
-#slide01:checked ~ .slidelist .slideitem {left:0;}
-#slide02:checked ~ .slidelist .slideitem {left:-100%;}
-#slide03:checked ~ .slidelist .slideitem {left:-200%;}
-#slide04:checked ~ .slidelist .slideitem {left:-300%;}
+	</style>
 
-.slide-control [class*="control"] {display:none;}
-#slide01:checked ~ .slide-control .control01 {display:block;}
-#slide02:checked ~ .slide-control .control02 {display:block;}
-#slide03:checked ~ .slide-control .control03 {display:block;}
-#slide04:checked ~ .slide-control .control04 {display:block;}
-
-</style>
-
-<div class="slidebox">
+<div class="section">
 	<input type="radio" name="slide" id="slide01" checked>
 	<input type="radio" name="slide" id="slide02">
 	<input type="radio" name="slide" id="slide03">
 	<input type="radio" name="slide" id="slide04">
-	<ul class="slidelist">
-		<li class="slideitem">
-			<a><img src="./img/slide01.jpg"></a>
-		</li>
-		<li class="slideitem">
-			<a><img src="./img/slide02.jpg"></a>
-		</li>
-		<li class="slideitem">
-			<a><img src="./img/slide03.jpg"></a>
-		</li>
-		<li class="slideitem">
-			<a><img src="./img/slide04.jpg"></a>
-		</li>
-		
-	</ul>
-	<div class="slide-control">
-		<div class="control01">
-			<label for="slide04" class="prev"></label>
-			<label for="slide02" class="next"></label>
-		</div>
-		<div class="control02">
-			<label for="slide01" class="prev"></label>
-			<label for="slide03" class="next"></label>
-		</div>
-		<div class="control03">
-			<label for="slide02" class="prev"></label>
-			<label for="slide04" class="next"></label>
-		</div>
-		<div class="control04">
-			<label for="slide03" class="prev"></label>
-			<label for="slide01" class="next"></label>
+	<input type="radio" name="slide" id="slide05">
+	<input type="radio" name="slide" id="slide06">
+	<input type="radio" name="slide" id="slide07">
+	<input type="radio" name="slide" id="slide08">
+	<input type="radio" name="slide" id="slide09">
+	<input type="radio" name="slide" id="slide10">
+	<input type="radio" name="slide" id="slide11">
+	<input type="radio" name="slide" id="slide12">
+	
+	<div class="slidewrap">
+		<ul class="slidelist">
+			<li>
+				<a>
+					<img src="slide/slide01.png">
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="slide/slide02.png">
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="slide/slide03.png">
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="slide/slide04.png">
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="slide/slide05.png">
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="slide/slide06.png">
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="slide/slide07.png">
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="slide/slide08.png">
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="slide/slide09.png">
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="slide/slide10.png">
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="slide/slide11.png">
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="slide/slide12.png">
+				</a>
+			</li>
+		</ul>
+
+		<div class="slide-control">
+			<div class="control01">
+				<label for="slide12" class="left"></label>
+				<label for="slide02" class="right"></label>
+			</div>
+			<div class="control02">
+				<label for="slide01" class="left"></label>
+				<label for="slide03" class="right"></label>
+			</div>
+			<div class="control03">
+				<label for="slide02" class="left"></label>
+				<label for="slide04" class="right"></label>
+			</div>
+			<div class="control04">
+				<label for="slide03" class="left"></label>
+				<label for="slide05" class="right"></label>
+			</div>
+			<div class="control05">
+				<label for="slide04" class="left"></label>
+				<label for="slide06" class="right"></label>
+			</div>
+			<div class="control06">
+				<label for="slide05" class="left"></label>
+				<label for="slide07" class="right"></label>
+			</div>
+			<div class="control07">
+				<label for="slide06" class="left"></label>
+				<label for="slide08" class="right"></label>
+			</div>
+			<div class="control08">
+				<label for="slide07" class="left"></label>
+				<label for="slide08" class="right"></label>
+			</div>
+			<div class="control09">
+				<label for="slide08" class="left"></label>
+				<label for="slide10" class="right"></label>
+			</div>
+			<div class="control10">
+				<label for="slide09" class="left"></label>
+				<label for="slide11" class="right"></label>
+			</div>
+			<div class="control11">
+				<label for="slide10" class="left"></label>
+				<label for="slide12" class="right"></label>
+			</div>
+			<div class="control12">
+				<label for="slide11" class="left"></label>
+				<label for="slide01" class="right"></label>
+			</div>
+
+			
 		</div>
 	</div>
 </div>
