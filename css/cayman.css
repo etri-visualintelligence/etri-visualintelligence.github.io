@@ -234,11 +234,11 @@ a:hover { text-decoration: underline; }
 }
 .section .slidelist .left {
   left:30px;
-  background:url('./_img/left.png') center center / 100% no-repeat;
+  background:url('_img/left.png') center center / 100% no-repeat;
 }
 .section .slidelist .right {
   right:30px;
-  background:url('./_img/right.png') center center / 100% no-repeat;
+  background:url('_img/right.png') center center / 100% no-repeat;
 }
 
 
