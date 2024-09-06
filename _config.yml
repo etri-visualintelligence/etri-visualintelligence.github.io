@@ -2,4 +2,4 @@ title: ETRI Visual Intelligence Lab(시각지능연구실)
 url: "https://etri-visualintelligence.github.io"
 theme: jekyll-theme-cayman
 include:
-  - css/custom.css
+  - assets/css/custom.css
