@@ -1,0 +1,6 @@
+/* custom.css 파일에 추가 */
+.wrapper {
+    max-width: 1000px; /* 원하는 너비로 변경 */
+    margin: 0 auto; /* 가운데 정렬 */
+    padding: 0 20px; /* 좌우 패딩 설정 */
+}
