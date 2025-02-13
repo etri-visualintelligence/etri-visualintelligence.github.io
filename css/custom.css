@@ -1,6 +1,6 @@
 /* custom.css 또는 style.scss 파일에 추가 */
 .wrapper {
-    max-width: 1000px; /* 원하는 최대 너비 설정 */
+    max-width: 1200px; /* 원하는 최대 너비 설정 */
     margin: 0 auto; /* 가운데 정렬 */
     padding: 0 20px; /* 좌우 여백 추가 */
 }
